@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>IA Project</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="../static/style.css">
+    </head>
+    <body>
+        <header>
+            <div class="topheader">
+                <p> IA Application</p>
+            </div>
+            <nav>
+                <ul>
+                    <li> <a href="/"> Home </a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="/allInventory"> All Inventory</a></li>
+                </ul>
+                <div>
+                    <span class="navbar-right-side">Welcome, {{user}}</span>
+                    <a href="/logout">Logout</a>
+                </div>
+            </nav>
+        </header>
+        <div class="container">
+            <h1> Welcome to my Web Application.</h1>
+            <button class="btn btn-primary"> <a href="/allEquipments">Equipments List</a></button>
+            <button class="btn btn-primary"> <a href="/myEquipments">Equipments I have</a></button>
+        </div>
+            
+    </body>
+</html>

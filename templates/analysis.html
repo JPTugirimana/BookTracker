@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>IA Project</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="../static/style.css">
+    </head>
+    <body>
+        <header>
+            <div class="topheader">
+                <p> IA Application</p>
+            </div>
+            <nav>
+                <ul>
+                    <li> <a href="/"> Home </a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="/allInventory"> All Inventory</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="container">
+            <h1> Data Analysis:</h1>
+
+            <form action="/datasummary" method="post" class="searchForm">
+                <select class="form-select searchField" aria-label="Default select example" name="datafilter" required>
+                    <option value="" selected>Select Filter</option>
+                    <option value="category"> By Category</option>
+                    <option value="teacherUsername">By Teacher Name</option>
+                    <option value="propertyType">By Property Type</option>
+                </select> 
+                <select class="form-select searchField" aria-label="Default select example" name="yAxisFilter" required>
+                    <option value="" selected>Select Filter</option>
+                    <option value="1"> Averages</option>
+                    <option value="2">Min</option>
+                    <option value="3">Max</option>
+                    <option value="4">Total Count</option>
+                </select>
+                <button type="submit" class="btn btn-primary">Go</button>
+            </form>
+             
+
+            {% if list != ""  %}
+            <table class="adminTable">
+                <tr>
+                    <th>Category</th>
+                    <th>Avg_Quantity</th>
+                    <th>Min</th>
+                    <th>Max</th>
+                    <th>Total count</th>
+                  </tr>
+                
+                  {%  for item in list %}
+                    <tr>
+                        <td> {{item[0]}}</td>
+                        <td> {{item[1]}}</td>
+                        <td> {{item[2]}}</td>
+                        <td> {{item[3]}}</td>
+                        <td> {{item[4]}}</td>
+                    </tr> 
+                  {% endfor %}
+            </table>
+            <div>
+                <img src={{url}} alt="" width="800" height="auto">
+            </div>
+            {% else %}
+                    <div class="alert alert-danger">
+                        <h4> List Empty - Please select a filter and resubmit!</h4>
+                    </div>
+            {% endif %}
+        </div>
+        
+    </body>
+</html>
