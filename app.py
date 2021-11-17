@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 import gunicorn
 
 app = Flask(__name__)
+app=Flask(__name__,template_folder='templates')
 app.secret_key = "Chloe" # Needed for the session
 
 my_db = mysql.connector.connect(
