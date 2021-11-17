@@ -9,10 +9,10 @@ app = Flask(__name__)
 app.secret_key = "Chloe" # Needed for the session
 
 my_db = mysql.connector.connect(
-    host= "localhost",
-    user="root",
-    password="",
-    database ="myjpdb"
+    host= "sql5.freemysqlhosting.net",
+    user="sql5451738",
+    password="EXQXF3Nav4",
+    database ="sql5451738"
 )
 
 mycursor = my_db.cursor()
